@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>cutefishos</name>
+    <description>Gentoo overlay for CutefishOS APPs</description>
+    <homepage>https://github.com/HougeLangley/cutefishos-overlay</homepage>
+    <owner type="project">
+      <email>hougelangley1987@gmail.com</email>
+      <name>苏业钦</name>
+    </owner>
+    <source type="git">git://github.com/HougeLangley/cutefishos-overlay.git</source>
+  </repo>
+</repositories>
