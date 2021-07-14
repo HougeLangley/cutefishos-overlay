@@ -23,7 +23,7 @@ RDEPEND="
 		>=cutefish-base/cutefish-statusbar-0.3
 		>=cutefish-base/cutefish-wallpapers-0.2
 		x11-misc/lightdm
-		terminal?	(	cutefish-base/cutefish-terminal	)
-		extra?	(	cutefish-base/cutefish-texteditor
-			cutefish-extra/cutefish-videoplayer	)
+		terminal?	(	>=cutefish-base/cutefish-terminal-0.1	)
+		extra?	(	>=cutefish-base/cutefish-texteditor-0.1
+			>=cutefish-extra/cutefish-videoplayer-0.1	)
 "
