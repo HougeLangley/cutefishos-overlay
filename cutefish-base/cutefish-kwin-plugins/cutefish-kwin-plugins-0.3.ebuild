@@ -12,9 +12,7 @@ HOMEPAGE="https://github.com/cutefishos/kwin-plugins"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND="
-	!x11-wm/dde-kwin
-"
+RDEPEND=""
 DEPEND="
 	kde-frameworks/kconfig
 	kde-plasma/kdecoration
