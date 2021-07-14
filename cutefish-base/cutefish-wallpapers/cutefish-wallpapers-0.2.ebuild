@@ -19,7 +19,7 @@ BDEPEND="${DEPEND}
 	dev-util/ninja
 "
 
-S="${WORKDIR}/${PN}-${PV}"
+S="${WORKDIR}/wallpapers-${PV}"
 
 src_configure(){
 	mycmakeargs=(
