@@ -17,7 +17,7 @@ DEPEND="
 	kde-frameworks/kwindowsystem
 	dev-libs/libdbusmenu-qt
 	dev-libs/libqtxdg
-	dev-qt/qtquickcontrols2
+	dev-qt/qtquickcontrols2[widgets]
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules

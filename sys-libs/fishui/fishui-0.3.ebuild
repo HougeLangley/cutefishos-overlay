@@ -15,8 +15,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="
 	kde-frameworks/kwindowsystem
-	dev-qt/qtquickcontrols2
-	dev-qt/qtwidgets
+	dev-qt/qtquickcontrols2[widgets]
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
