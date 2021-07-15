@@ -16,6 +16,7 @@ RDEPEND=""
 DEPEND="
 	kde-frameworks/kwindowsystem
 	dev-qt/qtquickcontrols2
+	dev-qt/qtwidgets
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
