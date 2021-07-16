@@ -22,7 +22,10 @@ DEPEND="
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools:5
+	dev-qt/linguist-tools[qml]
+	dev-qt/assistant
+	dev-qt/designer
+	dev-qt/qdbusviewer
 "
 
 S="${WORKDIR}/${PN}-${PV}"
