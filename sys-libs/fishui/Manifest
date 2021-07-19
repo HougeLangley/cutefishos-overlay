@@ -1,1 +1,2 @@
 DIST fishui-0.3.tar.gz 79816 SHA256 b2899c4c4610c71fb4deda5dd9ee141e3cdf19d595ab161dcee980a64f5e5f29
+DIST fix_gentoo_build_fail.patch 738 SHA256 ed4c40e0edc9e74bd700e44202e63c2aafa58e7f1f35266bcbeef6377ef751b7
