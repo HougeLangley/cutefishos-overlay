@@ -5,7 +5,10 @@ EAPI=7
 
 inherit cmake
 
-SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="
+https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+https://github.com/HougeLangley/fishui/releases/download/Patches-0.3/fix_gentoo_build_fail.patch
+"
 KEYWORDS="~amd64"
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
 HOMEPAGE="https://github.com/cutefishos/fishui"
@@ -27,6 +30,12 @@ BDEPEND="${DEPEND}
 "
 
 S="${WORKDIR}/${PN}-${PV}"
+
+PATCHES=( "${DISTDIR}/fix_gentoo_build_fail.patch" )
+
+src_prepare(){
+	eapply "${DISTDIR}/fix_gentoo_build_fail.patch"	||	die
+}
 
 src_configure(){
 	mycmakeargs=(
