@@ -5,7 +5,9 @@ EAPI=7
 
 inherit cmake
 
-SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.3-patches/fixed_kwin-plugins_QApplication.patch
+"
 KEYWORDS="~amd64"
 DESCRIPTION="CutefishOS KWin Plugins"
 HOMEPAGE="https://github.com/cutefishos/kwin-plugins"
@@ -33,6 +35,12 @@ BDEPEND="${DEPEND}
 "
 
 S="${WORKDIR}/kwin-plugins-${PV}"
+
+PATCHES=( "${DISTDIR}/fixed_kwin-plugins_QApplication.patch" )
+
+src_prepare(){
+	cmake_src_prepare
+}
 
 src_configure(){
 	mycmakeargs=(
