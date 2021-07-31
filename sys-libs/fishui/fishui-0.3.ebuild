@@ -35,8 +35,6 @@ PATCHES=( "${DISTDIR}/fixed_QApplication.patch" )
 
 src_prepare(){
 	eapply "${DISTDIR}/fixed_QApplication.patch"	||	die
-
-	default
 }
 
 src_configure(){
