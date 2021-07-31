@@ -1,2 +1,2 @@
 DIST fishui-0.3.tar.gz 79816 SHA256 b2899c4c4610c71fb4deda5dd9ee141e3cdf19d595ab161dcee980a64f5e5f29
-DIST fixed_QApplication.patch 737 SHA256 2774ca0bea9e6342e75108b78f46c5b0c4eb6fe0cea3826e85e38cfba88ae142
+DIST fixed_QApplication.patch 368 SHA256 014d901b3d1c731fcf915819549c4b1295ba12fad906b73c58db137ff10d6e23
