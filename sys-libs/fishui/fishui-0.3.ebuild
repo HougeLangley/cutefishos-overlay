@@ -34,7 +34,8 @@ S="${WORKDIR}/${PN}-${PV}"
 PATCHES=( "${DISTDIR}/fixed_QApplication.patch" )
 
 src_prepare(){
-	eapply "${DISTDIR}/fixed_QApplication.patch"	||	die
+	default
+	#eapply "${DISTDIR}/fixed_QApplication.patch"	||	die
 }
 
 src_configure(){
