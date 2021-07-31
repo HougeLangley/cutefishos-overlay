@@ -33,7 +33,6 @@ S="${WORKDIR}/statusbar-${PV}"
 
 src_configure(){
 	mycmakeargs=(
-		CMAKE_MAKEFILE_GENERATOR="emake"
 		-DCMAKE_INSTALL_PREFIX="/usr"
 	)
 	cmake_src_configure
