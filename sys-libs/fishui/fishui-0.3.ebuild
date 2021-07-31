@@ -34,8 +34,7 @@ S="${WORKDIR}/${PN}-${PV}"
 PATCHES=( "${DISTDIR}/fixed_QApplication.patch" )
 
 src_prepare(){
-	default
-	#eapply "${DISTDIR}/fixed_QApplication.patch"	||	die
+	cmake_src_prepare
 }
 
 src_configure(){
