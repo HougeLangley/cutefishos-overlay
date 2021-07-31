@@ -22,7 +22,7 @@ DEPEND="
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/qtchooser
+	dev-qt/linguist-tools[qml]
 	dev-qt/assistant
 	dev-qt/designer
 	dev-qt/qdbusviewer
