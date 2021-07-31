@@ -32,7 +32,7 @@ BDEPEND="${DEPEND}
 	dev-qt/qdbusviewer
 "
 
-S="${WORKDIR}/${PN}-${PV}"
+S="${WORKDIR}/kwin-plugins-${PV}"
 
 src_configure(){
 	mycmakeargs=(
