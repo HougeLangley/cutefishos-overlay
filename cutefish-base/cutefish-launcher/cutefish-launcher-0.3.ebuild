@@ -27,7 +27,7 @@ BDEPEND="${DEPEND}
 	dev-qt/qdbusviewer
 "
 
-S="${WORKDIR}/${PN}-${PV}"
+S="${WORKDIR}/launcher-${PV}"
 
 src_configure(){
 	mycmakeargs=(
