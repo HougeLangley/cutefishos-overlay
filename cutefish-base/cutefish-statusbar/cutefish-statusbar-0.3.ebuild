@@ -28,7 +28,7 @@ BDEPEND="${DEPEND}
 	dev-qt/qdbusviewer
 "
 
-S="${WORKDIR}/${PN}-${PV}"
+S="${WORKDIR}/statusbar-${PV}"
 
 src_configure(){
 	mycmakeargs=(
