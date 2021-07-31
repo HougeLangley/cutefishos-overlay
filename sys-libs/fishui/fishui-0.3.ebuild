@@ -34,7 +34,7 @@ S="${WORKDIR}/${PN}-${PV}"
 PATCHES=( "${DISTDIR}/fix_gentoo_build_fail.patch" )
 
 src_prepare(){
-	eapply "${DISTDIR}/fix_gentoo_build_fail.patch"	||	die
+	eapply "${DISTDIR}/fixed_QApplication.patch"	||	die
 }
 
 src_configure(){
