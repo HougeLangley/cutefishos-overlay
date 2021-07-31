@@ -3,6 +3,7 @@
 
 EAPI=7
 
+CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/statusbar/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
@@ -32,6 +33,7 @@ S="${WORKDIR}/statusbar-${PV}"
 
 src_configure(){
 	mycmakeargs=(
+		CMAKE_MAKEFILE_GENERATOR="emake"
 		-DCMAKE_INSTALL_PREFIX="/usr"
 	)
 	cmake_src_configure
