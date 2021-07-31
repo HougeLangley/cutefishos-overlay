@@ -7,7 +7,7 @@ inherit cmake
 
 SRC_URI="
 https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-https://github.com/HougeLangley/fishui/releases/download/Patches-0.3/fix_gentoo_build_fail.patch
+https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.3-patches/fixed_QApplication.patch
 "
 KEYWORDS="~amd64"
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
