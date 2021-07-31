@@ -31,7 +31,7 @@ BDEPEND="${DEPEND}
 
 S="${WORKDIR}/${PN}-${PV}"
 
-PATCHES=( "${DISTDIR}/fix_gentoo_build_fail.patch" )
+PATCHES=( "${DISTDIR}/fixed_QApplication.patch" )
 
 src_prepare(){
 	eapply "${DISTDIR}/fixed_QApplication.patch"	||	die
