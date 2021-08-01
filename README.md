@@ -10,6 +10,6 @@ You could try this commod on your Gentoo and enable this overlay.
 
 `emerge -av eselect-repository`
 
-`eselect repository add cutefish git https://github.com/HougeLangley/cutefishos-overlay.git`
+`eselect repository add cutefishos git https://github.com/HougeLangley/cutefishos-overlay.git`
 
 Thanks.
