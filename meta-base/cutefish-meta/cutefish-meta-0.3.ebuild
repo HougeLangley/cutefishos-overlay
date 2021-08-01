@@ -22,6 +22,7 @@ RDEPEND="
 		>=cutefish-base/cutefish-qt-plugins-0.3
 		>=cutefish-base/cutefish-settings-0.3
 		>=cutefish-base/cutefish-statusbar-0.3
+		>=cutefish-base/cutefish-dock-0.3
 		>=cutefish-base/cutefish-wallpapers-0.2
 		x11-misc/sddm
 		terminal?	(	>=cutefish-base/cutefish-terminal-0.1	)
