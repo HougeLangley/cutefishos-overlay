@@ -3,6 +3,7 @@
 
 EAPI=7
 
+CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/core/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
