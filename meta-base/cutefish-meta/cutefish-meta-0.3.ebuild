@@ -13,6 +13,7 @@ KEYWORDS="~amd64"
 IUSE="+base terminal extra"
 
 RDEPEND="
+		>=sys-libs/cutefish-core-0.3
 		>=cutefish-base/cutefish-kwin-plugins-0.3
 		>=cutefish-base/cutefish-icons-0.3
 		>=cutefish-base/cutefish-filemanager-0.3
@@ -22,6 +23,7 @@ RDEPEND="
 		>=cutefish-base/cutefish-settings-0.3
 		>=cutefish-base/cutefish-statusbar-0.3
 		>=cutefish-base/cutefish-wallpapers-0.2
+		x11-misc/sddm
 		terminal?	(	>=cutefish-base/cutefish-terminal-0.1	)
 		extra?	(	>=cutefish-base/cutefish-texteditor-0.1
 			>=cutefish-extra/cutefish-videoplayer-0.1	)
