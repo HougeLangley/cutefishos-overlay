@@ -32,6 +32,7 @@ BDEPEND="${DEPEND}
 	dev-qt/assistant
 	dev-qt/designer
 	dev-qt/qdbusviewer
+	dev-qt/qtopengl
 "
 
 S="${WORKDIR}/kwin-plugins-${PV}"
