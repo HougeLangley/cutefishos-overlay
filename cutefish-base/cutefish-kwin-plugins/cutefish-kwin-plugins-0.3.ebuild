@@ -24,6 +24,7 @@ DEPEND="
 	kde-frameworks/kwindowsystem
 	kde-frameworks/kwayland
 	<kde-plasma/kwin-5.23.0
+	<kde-plasma/libkworkspace-5.23.0
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
