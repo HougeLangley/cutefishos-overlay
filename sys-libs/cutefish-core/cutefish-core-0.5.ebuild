@@ -19,6 +19,8 @@ DEPEND="
 	media-sound/pulseaudio
 	x11-libs/libXtst
 	sys-auth/polkit-qt
+	x11-drivers/xf86-input-synaptics
+	x11-misc/appmenu-gtk-module
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
