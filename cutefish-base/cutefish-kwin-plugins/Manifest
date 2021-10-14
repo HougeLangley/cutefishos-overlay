@@ -1,3 +1,4 @@
 DIST cutefish-kwin-plugins-0.3.tar.gz 33720 SHA256 36555ce1c2ea3acd7598601f896743a6ae0bf4335b5ac2a4f68684b29073ed03
 DIST cutefish-kwin-plugins-0.5.tar.gz 33969 SHA256 8fd95aeb8c6fb0f98a522af3d8758eb538b8c68d2a2e67f563a6f02113b87ca8
 DIST v0.3-fixed_kwin-plugins_QApplication.patch 442 SHA256 8ee1309cb4a43555733966eb30752e0637d3929dd9c6235bc32a17c85d8906ab
+DIST v0.5-fixed_kwin-plugins_QApplication.patch 442 SHA256 797b8c604e1095929045d18e5fd773ff92b574f546168c781456162ec14d32d1
