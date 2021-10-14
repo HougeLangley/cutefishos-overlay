@@ -6,7 +6,7 @@ EAPI=7
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/icons/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 DESCRIPTION="System default icon theme of CutefishOS"
 HOMEPAGE="https://github.com/cutefishos/icons"
 LICENSE="GPL-3"

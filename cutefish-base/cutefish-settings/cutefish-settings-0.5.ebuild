@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/settings/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 DESCRIPTION="System Settings application for Cutefish Desktop"
 HOMEPAGE="https://github.com/cutefishos/settings"
 LICENSE="GPL-3"

@@ -9,7 +9,7 @@ SRC_URI="
 https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch -> v0.5-fixed_QApplication.patch
 "
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
 HOMEPAGE="https://github.com/cutefishos/fishui"
 LICENSE="GPL-3"

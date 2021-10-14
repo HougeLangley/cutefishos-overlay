@@ -8,7 +8,7 @@ inherit cmake
 SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_kwin-plugins_QApplication.patch -> v0.5-fixed_kwin-plugins_QApplication.patch
 "
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 DESCRIPTION="CutefishOS KWin Plugins"
 HOMEPAGE="https://github.com/cutefishos/kwin-plugins"
 LICENSE="GPL-3"
@@ -23,8 +23,7 @@ DEPEND="
 	kde-frameworks/kconfigwidgets
 	kde-frameworks/kwindowsystem
 	kde-frameworks/kwayland
-	<kde-plasma/kwin-5.23.0
-	<kde-plasma/libkworkspace-5.23.0
+	kde-plasma/kwin
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules

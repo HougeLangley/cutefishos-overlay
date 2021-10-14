@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/videoplayer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 DESCRIPTION="An open source video player built with Qt/QML and libmpv"
 HOMEPAGE="https://github.com/cutefishos/videoplayer"
 LICENSE="GPL-3"
