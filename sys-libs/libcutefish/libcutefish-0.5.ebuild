@@ -19,7 +19,8 @@ DEPEND="
 	kde-frameworks/networkmanager-qt
 	dev-qt/qtquickcontrols2[widgets]
 	sys-apps/accountsservice
-	net-wireless/bluez
+	# net-wireless/bluez
+	kde-frameworks/bluez-qt
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
