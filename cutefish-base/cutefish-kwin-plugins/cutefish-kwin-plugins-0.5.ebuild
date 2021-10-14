@@ -23,7 +23,7 @@ DEPEND="
 	kde-frameworks/kconfigwidgets
 	kde-frameworks/kwindowsystem
 	kde-frameworks/kwayland
-	<kde-plasma/kwin-5.23
+	=kde-plasma/kwin-5.22.5
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
