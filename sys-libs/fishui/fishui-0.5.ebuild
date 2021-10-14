@@ -1,13 +1,13 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit cmake
 
 SRC_URI="
 https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.3-patches/fixed_QApplication.patch -> v0.3-fixed_QApplication.patch
+https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch -> v0.5-fixed_QApplication.patch
 "
 KEYWORDS="~amd64"
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
@@ -31,7 +31,7 @@ BDEPEND="${DEPEND}
 
 S="${WORKDIR}/${PN}-${PV}"
 
-PATCHES=( "${DISTDIR}/v0.3-fixed_QApplication.patch" )
+PATCHES=( "${DISTDIR}/v0.5-fixed_QApplication.patch" )
 
 src_prepare(){
 	cmake_src_prepare

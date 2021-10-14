@@ -27,5 +27,5 @@ RDEPEND="
 		x11-misc/sddm
 		terminal?	(	>=cutefish-base/cutefish-terminal-0.1	)
 		extra?	(	>=cutefish-base/cutefish-texteditor-0.1
-			>=cutefish-extra/cutefish-videoplayer-0.1	)
+			>=cutefish-base/cutefish-videoplayer-0.1	)
 "
