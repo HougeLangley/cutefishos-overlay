@@ -3,7 +3,7 @@
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
     <name>cutefishos</name>
-    <description>Gentoo overlay for CutefishOS APPs</description>
+    <description>Gentoo overlay for CutefishOS DE</description>
     <homepage>https://github.com/HougeLangley/cutefishos-overlay</homepage>
     <owner type="project">
       <email>hougelangley1987@gmail.com</email>
