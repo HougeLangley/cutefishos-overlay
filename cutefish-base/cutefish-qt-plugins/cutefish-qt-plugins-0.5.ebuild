@@ -6,7 +6,7 @@ EAPI=8
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/qt-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64"
+KEYWORDS="amd64 arm64"
 DESCRIPTION="Unify Qt application style of CutefishOS"
 HOMEPAGE="https://github.com/cutefishos/qt-plugins"
 LICENSE="GPL-3"

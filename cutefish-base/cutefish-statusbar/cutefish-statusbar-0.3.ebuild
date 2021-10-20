@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/statusbar/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64"
+KEYWORDS="amd64 arm64"
 DESCRIPTION="Status of the system, such as time, system tray"
 HOMEPAGE="https://github.com/cutefishos/statusbar"
 LICENSE="GPL-3"

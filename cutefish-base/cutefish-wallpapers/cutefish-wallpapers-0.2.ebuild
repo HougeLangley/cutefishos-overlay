@@ -6,7 +6,7 @@ EAPI=7
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/wallpapers/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64"
+KEYWORDS="amd64 arm64"
 DESCRIPTION="CutefishOS's system wallpaper"
 HOMEPAGE="https://github.com/cutefishos/wallpapers"
 LICENSE="GPL-3"

@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/screenshot/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64"
+KEYWORDS="amd64 arm64"
 DESCRIPTION="Screenshot tool for CutefishOS"
 HOMEPAGE="https://github.com/cutefishos/screenshot"
 LICENSE="GPL-3"

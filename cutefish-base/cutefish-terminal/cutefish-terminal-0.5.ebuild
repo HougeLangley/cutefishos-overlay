@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 SRC_URI="https://github.com/cutefishos/terminal/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64"
+KEYWORDS="amd64 arm64"
 DESCRIPTION="A terminal emulator for Cutefish"
 HOMEPAGE="https://github.com/cutefishos/terminal"
 LICENSE="GPL-3"
