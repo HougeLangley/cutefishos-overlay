@@ -6,7 +6,7 @@ I will try my best port CutefishOS to Gentoo.
 
 If you like it, you could give me a hand.
 
-You could try this commod on your Gentoo and enable this overlay.
+You could try those commands below on your Gentoo install to enable this overlay.
 
 `emerge -av eselect-repository`
 
