@@ -6,8 +6,15 @@ EAPI=8
 CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
-SRC_URI="https://github.com/cutefishos/settings/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64 arm64"
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/cutefishos/settings.git"
+	EGIT_CHECKOUT_DIR=${WORKDIR}/settings-${PV}
+else
+	SRC_URI="https://github.com/cutefishos/settings/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="amd64 arm64 riscv"
+fi
+
 DESCRIPTION="System Settings application for Cutefish Desktop"
 HOMEPAGE="https://github.com/cutefishos/settings"
 LICENSE="GPL-3"

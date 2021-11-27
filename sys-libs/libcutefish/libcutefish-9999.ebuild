@@ -1,12 +1,19 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit cmake
 
-SRC_URI="https://github.com/cutefishos/libcutefish/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64 arm64"
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/cutefishos/libcutefish.git"
+	EGIT_CHECKOUT_DIR=${WORKDIR}/${PN}-${PV}
+else
+	SRC_URI="https://github.com/cutefishos/libcutefish/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+fi
+
 DESCRIPTION="System library for Cutefish applications"
 HOMEPAGE="https://github.com/cutefishos/libcutefish"
 LICENSE="GPL-3"
@@ -19,7 +26,7 @@ DEPEND="
 	kde-frameworks/networkmanager-qt
 	dev-qt/qtquickcontrols2[widgets]
 	sys-apps/accountsservice
-	net-wireless/bluez
+	kde-frameworks/bluez-qt
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules

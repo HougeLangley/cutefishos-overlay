@@ -1,15 +1,20 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit cmake
 
-SRC_URI="
-https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.3-patches/fixed_QApplication.patch -> v0.3-fixed_QApplication.patch
-"
-KEYWORDS="amd64 arm64"
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
+	EDIT_REPO_URI="https://github.com/HougeLangley/fishui.git"
+	EGIT_CHECKOUT_DIR=${WORKDIR}/${PN}-${PV}
+else
+	SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch"
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+fi
+
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
 HOMEPAGE="https://github.com/cutefishos/fishui"
 LICENSE="GPL-3"
@@ -31,9 +36,11 @@ BDEPEND="${DEPEND}
 
 S="${WORKDIR}/${PN}-${PV}"
 
-PATCHES=( "${DISTDIR}/v0.3-fixed_QApplication.patch" )
-
 src_prepare(){
+	if [[ ${PV} !=9999* ]]; then
+	eapply "${DISTDIR}/fixed_QApplication.patch"
+	fi
+	
 	cmake_src_prepare
 }
 

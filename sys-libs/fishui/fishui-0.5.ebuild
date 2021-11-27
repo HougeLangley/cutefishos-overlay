@@ -5,11 +5,16 @@ EAPI=8
 
 inherit cmake
 
-SRC_URI="
-https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch -> v0.5-fixed_QApplication.patch
-"
-KEYWORDS="amd64 arm64"
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
+	EDIT_REPO_URI="https://github.com/HougeLangley/fishui.git"
+	EGIT_CHECKOUT_DIR=${WORKDIR}/${PN}-${PV}
+else
+	SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch -> v0.5-fixed_QApplication.patch"
+	KEYWORDS="amd64 arm64 riscv"
+fi
+
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
 HOMEPAGE="https://github.com/cutefishos/fishui"
 LICENSE="GPL-3"
@@ -31,9 +36,11 @@ BDEPEND="${DEPEND}
 
 S="${WORKDIR}/${PN}-${PV}"
 
-PATCHES=( "${DISTDIR}/v0.5-fixed_QApplication.patch" )
-
 src_prepare(){
+	if [[ ${PV} !=9999* ]]; then
+	eapply "${DISTDIR}/v0.5-fixed_QApplication.patch"
+	fi
+	
 	cmake_src_prepare
 }
 

@@ -5,8 +5,15 @@ EAPI=8
 
 inherit cmake
 
-SRC_URI="https://github.com/cutefishos/qt-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64 arm64"
+if [[ ${PV} = 9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/cutefishos/qt-plugins.git"
+	EGIT_CHECKOUT_DIR=${WORKDIR}/qt-plugins-${PV}
+else
+	SRC_URI="https://github.com/cutefishos/qt-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="amd64 arm64 riscv"
+fi
+
 DESCRIPTION="Unify Qt application style of CutefishOS"
 HOMEPAGE="https://github.com/cutefishos/qt-plugins"
 LICENSE="GPL-3"

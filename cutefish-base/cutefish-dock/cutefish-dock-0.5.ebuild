@@ -6,8 +6,15 @@ EAPI=8
 CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
-SRC_URI="https://github.com/cutefishos/dock/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="amd64 arm64"
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/cutefishos/dock.git"
+	EGIT_CHECKOUT_DIR=${WORKDIR}/dock-${PV}
+else
+	SRC_URI="https://github.com/cutefishos/dock/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="amd64 arm64 riscv"
+fi
+
 DESCRIPTION="CutefishOS application dock"
 HOMEPAGE="https://github.com/cutefishos/dock"
 LICENSE="GPL-3"
