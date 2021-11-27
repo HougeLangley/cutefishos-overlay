@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
-	EDIT_REPO_URI="https://github.com/cutefishos/statusbar.git"
+	EGIT_REPO_URI="https://github.com/cutefishos/statusbar.git"
 	EGIT_CHECKOUT_DIR=statusbar-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/statusbar/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
