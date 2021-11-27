@@ -7,6 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/statusbar.git"
 	EGIT_CHECKOUT_DIR=statusbar-${PV}
 else
