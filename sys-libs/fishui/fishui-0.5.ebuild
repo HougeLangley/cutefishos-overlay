@@ -37,7 +37,7 @@ BDEPEND="${DEPEND}
 S="${WORKDIR}/${PN}-${PV}"
 
 src_prepare(){
-	if [[ ${PV} !=9999* ]]; then
+	if [[ ${PV} != 9999* ]]; then
 	eapply "${DISTDIR}/v0.5-fixed_QApplication.patch"
 	fi
 	
