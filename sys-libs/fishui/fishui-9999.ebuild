@@ -8,7 +8,7 @@ inherit cmake
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
 	EDIT_REPO_URI="https://github.com/HougeLangley/fishui.git"
-	EGIT_CHECKOUT_DIR=${WORKDIR}/${PN}-${PV}
+	EGIT_CHECKOUT_DIR=${PN}-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch"

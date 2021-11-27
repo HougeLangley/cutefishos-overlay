@@ -9,7 +9,7 @@ inherit cmake
 if [[ ${PV} = 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/screenlocker.git"
-	EGIT_CHECKOUT_DIR=${WORKDIR}/screenlocker-${PV}
+	EGIT_CHECKOUT_DIR=screenlocker-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/screenlocker/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64 arm64 riscv"

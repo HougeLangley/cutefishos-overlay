@@ -9,7 +9,7 @@ inherit cmake
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/dock.git"
-	EGIT_CHECKOUT_DIR=${WORKDIR}/dock-${PV}
+	EGIT_CHECKOUT_DIR=dock-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/dock/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64 arm64 riscv"

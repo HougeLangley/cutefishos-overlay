@@ -9,7 +9,7 @@ inherit cmake
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/videoplayer.git"
-	EGIT_CHECKOUT_DIR=${WORKDIR}/videoplayer-${PV}
+	EGIT_CHECKOUT_DIR=videoplayer-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/videoplayer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64 arm64 riscv"
