@@ -7,7 +7,7 @@ inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/cutefishos/fishui.git"
+	EGIT_REPO_URI="https://github.com/HougeLangley/fishui.git"
 	EGIT_CHECKOUT_DIR=${PN}-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
