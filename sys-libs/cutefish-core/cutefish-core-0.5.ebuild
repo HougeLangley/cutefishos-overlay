@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=core-${PV}
 else
 	SRC_URI="https://github.com/cutefishos/core/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 amd64  ~arm64 arm64 ~riscv riscv"
+	KEYWORDS="amd64 arm64 riscv"
 fi
 
 DESCRIPTION="System components and backend of CutefishOS"
