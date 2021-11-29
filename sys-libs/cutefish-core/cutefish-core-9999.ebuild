@@ -26,7 +26,8 @@ DEPEND="
 	media-sound/pulseaudio
 	x11-libs/libXtst
 	sys-auth/polkit-qt
-	x11-base/xorg-drivers[input_devices_libinput,input_devices_synaptics]
+	x11-drivers/xf86-input-libinput
+	x11-drivers/xf86-input-synaptics
 	x11-misc/appmenu-gtk-module
 "
 BDEPEND="${DEPEND}
