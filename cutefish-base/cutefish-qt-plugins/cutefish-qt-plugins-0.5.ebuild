@@ -9,9 +9,10 @@ if [[ ${PV} = 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/qt-plugins.git"
 	EGIT_CHECKOUT_DIR=qt-plugins-${PV}
+	KEYWORDS=""
 else
 	SRC_URI="https://github.com/cutefishos/qt-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="amd64 arm64 riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
 fi
 
 DESCRIPTION="Unify Qt application style of CutefishOS"

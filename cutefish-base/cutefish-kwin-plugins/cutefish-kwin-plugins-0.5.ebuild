@@ -9,10 +9,11 @@ if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/HougeLangley/kwin-plugins.git"
 	EGIT_CHECKOUT_DIR=kwin-plugins-${PV}
+	KEYWORDS=""
 else
 	SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_kwin-plugins_QApplication.patch -> v0.5-fixed_kwin-plugins_QApplication.patch"
-	KEYWORDS="amd64 arm64 riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
 fi
 
 DESCRIPTION="CutefishOS KWin Plugins"

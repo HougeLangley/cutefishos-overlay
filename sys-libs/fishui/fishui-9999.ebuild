@@ -9,6 +9,7 @@ if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/fishui.git"
 	EGIT_CHECKOUT_DIR=${PN}-${PV}
+	KEYWORDS=""
 else
 	SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch"
@@ -40,7 +41,7 @@ src_prepare(){
 	if [[ ${PV} != 9999* ]]; then
 	eapply "${DISTDIR}/fixed_QApplication.patch"
 	fi
-	
+
 	cmake_src_prepare
 }
 
