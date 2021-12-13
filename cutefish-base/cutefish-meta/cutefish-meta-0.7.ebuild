@@ -13,21 +13,21 @@ KEYWORDS="~amd64 ~arm64"
 IUSE="+base +terminal +extra"
 
 RDEPEND="
-		=sys-libs/cutefish-core-0.7
-		=cutefish-base/cutefish-kwin-plugins-0.7
-		=cutefish-base/cutefish-icons-0.7
-		=cutefish-base/cutefish-filemanager-0.7
-		=cutefish-base/cutefish-calculator-0.7
-		=cutefish-base/cutefish-launcher-0.7
-		=cutefish-base/cutefish-qt-plugins-0.7
-		=cutefish-base/cutefish-settings-0.7
-		=cutefish-base/cutefish-statusbar-0.7
-		=cutefish-base/cutefish-dock-0.7
-		=cutefish-base/cutefish-wallpapers-0.7
-		=cutefish-base/cutefish-screenlocker-0.7
-		=cutefish-base/cutefish-screenshot-0.7
-		=cutefish-base/cutefish-videoplayer-0.7
+		>=sys-libs/cutefish-core-${PV}:${SLOT}
+		>=cutefish-base/cutefish-kwin-plugins-${PV}:${SLOT}
+		>=cutefish-base/cutefish-icons-${PV}:${SLOT}
+		>=cutefish-base/cutefish-filemanager-${PV}:${SLOT}
+		>=cutefish-base/cutefish-calculator-${PV}:${SLOT}
+		>=cutefish-base/cutefish-launcher-${PV}:${SLOT}
+		>=cutefish-base/cutefish-qt-plugins-${PV}:${SLOT}
+		>=cutefish-base/cutefish-settings-${PV}:${SLOT}
+		>=cutefish-base/cutefish-statusbar-${PV}:${SLOT}
+		>=cutefish-base/cutefish-dock-${PV}:${SLOT}
+		>=cutefish-base/cutefish-wallpapers-${PV}:${SLOT}
+		>=cutefish-base/cutefish-screenlocker-${PV}:${SLOT}
+		>=cutefish-base/cutefish-screenshot-${PV}:${SLOT}
+		>=cutefish-base/cutefish-videoplayer-${PV}:${SLOT}
 		x11-misc/sddm
-		terminal?	(	=cutefish-base/cutefish-terminal-0.7	)
-		extra?	(	=cutefish-base/cutefish-texteditor-0.7	)
+		terminal?	(	>=cutefish-base/cutefish-terminal-${PV}:${SLOT}	)
+		extra?	(	>=cutefish-base/cutefish-texteditor-${PV}:${SLOT}	)
 "

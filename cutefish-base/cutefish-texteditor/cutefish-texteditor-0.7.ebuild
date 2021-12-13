@@ -32,7 +32,7 @@ BDEPEND="${DEPEND}
 	dev-qt/qtcore
 	dev-qt/qtgui
 	dev-qt/qtnetwork
-	dev-qt/qtdeclarative	
+	dev-qt/qtdeclarative
 	kde-plasma/kdeplasma-addons
 	kde-frameworks/syntax-highlighting
 "
