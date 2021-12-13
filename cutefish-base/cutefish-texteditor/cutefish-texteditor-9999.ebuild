@@ -9,7 +9,7 @@ inherit cmake
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/cutefishos/texteditor.git"
-	EGIT_CHECKOUT_DIR=texteditor-${PV}
+	EGIT_CHECKOUT_DIR=cutefish-texteditor-${PV}
 	KEYWORDS=""
 else
 	EGIT_COMMIT="7967442827911ed8faf2a8faa6fea3fdc1907381"
