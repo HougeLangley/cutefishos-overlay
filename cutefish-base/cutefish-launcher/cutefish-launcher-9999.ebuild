@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=launcher-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="b5198d15880b8df7ffd7f83100cb90d9bbbe9c79"
+	EGIT_COMMIT="c12a23f0a5553138fddae8f8bcd9b1aa8c07df5b"
 	SRC_URI="https://github.com/cutefishos/launcher/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/launcher-${EGIT_COMMIT}"

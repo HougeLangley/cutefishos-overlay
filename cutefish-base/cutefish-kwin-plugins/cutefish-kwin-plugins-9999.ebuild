@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	KEYWORDS=""
 else
 	EGIT_COMMIT="b5198d15880b8df7ffd7f83100cb90d9bbbe9c79"
-	SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/kwin-plugins-${EGIT_COMMIT}"
 fi

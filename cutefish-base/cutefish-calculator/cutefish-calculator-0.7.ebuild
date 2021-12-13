@@ -11,7 +11,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=calculator-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT=“6cce31e310ae68fa5aafa9b9e92f542c37db19ae”
+	EGIT_COMMIT="6cce31e310ae68fa5aafa9b9e92f542c37db19ae"
 	SRC_URI="https://github.com/cutefishos/calculator/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/calculator-${EGIT_COMMIT}"
