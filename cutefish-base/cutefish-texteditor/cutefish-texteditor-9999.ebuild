@@ -15,6 +15,7 @@ else
 	EGIT_COMMIT="7967442827911ed8faf2a8faa6fea3fdc1907381"
 	SRC_URI="https://github.com/cutefishos/texteditor/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/texteditor-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="Elegant text editor for Cutefish"
@@ -36,11 +37,13 @@ BDEPEND="${DEPEND}
 	kde-frameworks/syntax-highlighting
 "
 
-S="${WORKDIR}/texteditor-${PV}"
-
 src_configure(){
 	mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX="/usr"
 	)
 	cmake_src_configure
+}
+
+src_install() {
+	default
 }
