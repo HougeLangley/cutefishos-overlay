@@ -11,8 +11,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=wallpapers-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/wallpapers/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="9acd305776a88e2a6c497c8e9b719c0f39a65c97"
+	SRC_URI="https://github.com/cutefishos/wallpapers/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/wallpapers-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="CutefishOS's system wallpaper"
@@ -26,8 +28,6 @@ BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
 "
-
-S="${WORKDIR}/wallpapers-${PV}"
 
 src_configure(){
 	mycmakeargs=(

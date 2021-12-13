@@ -11,8 +11,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=calculator-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/calculator/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
+	EGIT_COMMIT=“6cce31e310ae68fa5aafa9b9e92f542c37db19ae”
+	SRC_URI="https://github.com/cutefishos/calculator/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/calculator-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="CutefishOS Calculator"
@@ -33,8 +35,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/calculator-${PV}"
 
 src_configure(){
 	mycmakeargs=(

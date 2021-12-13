@@ -3,33 +3,29 @@
 
 EAPI=8
 
-CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/cutefishos/core.git"
-	EGIT_CHECKOUT_DIR=core-${PV}
+	EGIT_REPO_URI="https://github.com/cutefishos/fishui.git"
+	EGIT_CHECKOUT_DIR=${PN}-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/core/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="1d37a00d0aba69076f179c6dcdfd2f17e55b9516"
+	SRC_URI="https://github.com/cutefishos/fishui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 fi
 
-DESCRIPTION="System components and backend of CutefishOS"
-HOMEPAGE="https://github.com/cutefishos/core"
+DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
+HOMEPAGE="https://github.com/cutefishos/fishui"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND="
-	sys-libs/fishui
-	media-sound/pulseaudio
-	x11-libs/libXtst
-	sys-auth/polkit-qt
-	x11-drivers/xf86-input-libinput
-	x11-drivers/xf86-input-synaptics
-	x11-misc/appmenu-gtk-module
+	kde-frameworks/kwindowsystem
+	dev-qt/qtquickcontrols2[widgets]
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
@@ -39,8 +35,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/core-${PV}"
 
 src_configure(){
 	mycmakeargs=(

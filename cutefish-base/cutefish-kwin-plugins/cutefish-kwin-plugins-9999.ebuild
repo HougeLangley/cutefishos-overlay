@@ -11,9 +11,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=kwin-plugins-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_kwin-plugins_QApplication.patch"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="b5198d15880b8df7ffd7f83100cb90d9bbbe9c79"
+	SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/kwin-plugins-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="CutefishOS KWin Plugins"
@@ -41,16 +42,6 @@ BDEPEND="${DEPEND}
 	dev-qt/qdbusviewer
 	dev-qt/qtopengl
 "
-
-S="${WORKDIR}/kwin-plugins-${PV}"
-
-src_prepare(){
-	if [[ ${PV} != 9999* ]] ; then
-		eapply "${DISTDIR}/fixed_kwin-plugins_QApplication.patch"
-	fi
-
-	cmake_src_prepare
-}
 
 src_configure(){
 	mycmakeargs=(

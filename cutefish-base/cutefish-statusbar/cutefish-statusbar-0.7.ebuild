@@ -8,34 +8,36 @@ inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/cutefishos/videoplayer.git"
-	EGIT_CHECKOUT_DIR=videoplayer-${PV}
+	EGIT_REPO_URI="https://github.com/cutefishos/statusbar.git"
+	EGIT_CHECKOUT_DIR=statusbar-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/videoplayer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="460f94c00402bc1fab0b13d51ee4b82d108259d2"
+	SRC_URI="https://github.com/cutefishos/statusbar/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/statusbar-${EGIT_COMMIT}"
 fi
 
-DESCRIPTION="An open source video player built with Qt/QML and libmpv"
-HOMEPAGE="https://github.com/cutefishos/videoplayer"
+DESCRIPTION="Status of the system, such as time, system tray"
+HOMEPAGE="https://github.com/cutefishos/statusbar"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 RDEPEND=""
-DEPEND="dev-qt/qtquickcontrols2[widgets]
-	dev-qt/qtdeclarative
-	media-video/mpv[libmpv]
-	net-misc/youtube-dl
+DEPEND="
+	sys-libs/fishui
+	sys-libs/libcutefish
+	dev-libs/libdbusmenu-qt
+	dev-qt/qtsvg
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
+	dev-util/ninja
 	dev-qt/linguist-tools[qml]
 	dev-qt/assistant
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/videoplayer-${PV}"
 
 src_configure(){
 	mycmakeargs=(

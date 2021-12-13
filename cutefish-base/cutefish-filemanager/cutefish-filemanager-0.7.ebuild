@@ -8,16 +8,18 @@ inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/cutefishos/settings.git"
-	EGIT_CHECKOUT_DIR=settings-${PV}
+	EGIT_REPO_URI="https://github.com/cutefishos/filemanager.git"
+	EGIT_CHECKOUT_DIR=filemanager-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/settings/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="94ecc5661736bf50440c150e06cb3266ddb10f48"
+	SRC_URI="https://github.com/cutefishos/filemanager/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/filemanager-${EGIT_COMMIT}"
 fi
 
-DESCRIPTION="System Settings application for Cutefish Desktop"
-HOMEPAGE="https://github.com/cutefishos/settings"
+DESCRIPTION="Cutefish File Manager"
+HOMEPAGE="https://github.com/cutefishos/filemanager"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
@@ -25,12 +27,8 @@ RDEPEND=""
 DEPEND="
 	sys-libs/fishui
 	sys-libs/libcutefish
-	media-libs/fontconfig
-	media-libs/freetype
-	dev-libs/icu
-	kde-frameworks/kcoreaddons
-	kde-frameworks/modemmanager-qt
-	kde-frameworks/networkmanager-qt
+	kde-frameworks/kio
+	kde-frameworks/solid
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
@@ -40,8 +38,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/settings-${PV}"
 
 src_configure(){
 	mycmakeargs=(

@@ -12,8 +12,10 @@ if [[ ${PV} = 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=screenlocker-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/screenlocker/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="90c70de51b61837dc9f52da58b5cce703cddab94"
+	SRC_URI="https://github.com/cutefishos/screenlocker/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/screenlocker-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="CutefishOS system screen locker"
@@ -33,8 +35,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/screenlocker-${PV}"
 
 src_configure(){
 	mycmakeargs=(

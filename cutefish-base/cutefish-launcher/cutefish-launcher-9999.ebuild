@@ -12,8 +12,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=launcher-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/launcher/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="b5198d15880b8df7ffd7f83100cb90d9bbbe9c79"
+	SRC_URI="https://github.com/cutefishos/launcher/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/launcher-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="CutefishOS's full-screen application launcher"
@@ -35,8 +37,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/launcher-${PV}"
 
 src_configure(){
 	mycmakeargs=(

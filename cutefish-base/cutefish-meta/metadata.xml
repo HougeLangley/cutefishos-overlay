@@ -8,6 +8,6 @@
 	<use>
 		<flag name="base">Install Base CutefishOS</flag>
 		<flag name="terminal">Install CutefishOS Terminal Emulator</flag>
-		<flag name="extra">Install CutefishOS extra applicaions developed by CutefishOS ( For Now Not Enable, Please Disalbe this USE flags )</flag>
+		<flag name="extra">Install CutefishOS extra applicaions developed by CutefishOS ( Not Stable )</flag>
 	</use>
 </pkgmetadata>

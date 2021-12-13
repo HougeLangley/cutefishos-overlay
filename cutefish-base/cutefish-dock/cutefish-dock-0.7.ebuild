@@ -12,8 +12,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=dock-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/dock/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="ecd8ce48b635e14349fdf1bfa3afcd64510249eb"
+	SRC_URI="https://github.com/cutefishos/dock/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/dock-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="CutefishOS application dock"
@@ -35,8 +37,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/dock-${PV}"
 
 src_configure(){
 	mycmakeargs=(

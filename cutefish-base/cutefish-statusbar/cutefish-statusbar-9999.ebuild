@@ -12,8 +12,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=statusbar-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/statusbar/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="460f94c00402bc1fab0b13d51ee4b82d108259d2"
+	SRC_URI="https://github.com/cutefishos/statusbar/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/statusbar-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="Status of the system, such as time, system tray"
@@ -36,8 +38,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/statusbar-${PV}"
 
 src_configure(){
 	mycmakeargs=(

@@ -11,8 +11,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=icons-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/icons/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="119feb59404f329eb2f1ebe14d63f3d53f8bd96c"
+	SRC_URI="https://github.com/cutefishos/icons/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/icons-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="System default icon theme of CutefishOS"
@@ -26,8 +28,6 @@ BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
 "
-
-S="${WORKDIR}/icons-${PV}"
 
 src_configure(){
 	mycmakeargs=(

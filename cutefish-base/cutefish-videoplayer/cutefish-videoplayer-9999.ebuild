@@ -12,8 +12,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=videoplayer-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/videoplayer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="c1218016e4de425cae23c1ea715e57b68a5b24c2"
+	SRC_URI="https://github.com/cutefishos/videoplayer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/videoplayer-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="An open source video player built with Qt/QML and libmpv"
@@ -34,8 +36,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/videoplayer-${PV}"
 
 src_configure(){
 	mycmakeargs=(

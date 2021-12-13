@@ -3,31 +3,36 @@
 
 EAPI=8
 
+CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/cutefishos/libcutefish.git"
-	EGIT_CHECKOUT_DIR=${PN}-${PV}
+	EGIT_REPO_URI="https://github.com/cutefishos/settings.git"
+	EGIT_CHECKOUT_DIR=settings-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/libcutefish/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="abbaa8c7f0c5b267cd6d0478d6ebab97819e0078"
+	SRC_URI="https://github.com/cutefishos/settings/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/settings-${EGIT_COMMIT}"
 fi
 
-DESCRIPTION="System library for Cutefish applications"
-HOMEPAGE="https://github.com/cutefishos/libcutefish"
+DESCRIPTION="System Settings application for Cutefish Desktop"
+HOMEPAGE="https://github.com/cutefishos/settings"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND="
-	kde-plasma/kscreen
+	sys-libs/fishui
+	sys-libs/libcutefish
+	media-libs/fontconfig
+	media-libs/freetype
+	dev-libs/icu
+	kde-frameworks/kcoreaddons
 	kde-frameworks/modemmanager-qt
 	kde-frameworks/networkmanager-qt
-	dev-qt/qtquickcontrols2[widgets]
-	sys-apps/accountsservice
-	kde-frameworks/bluez-qt
 "
 BDEPEND="${DEPEND}
 	kde-frameworks/extra-cmake-modules
@@ -37,8 +42,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/${PN}-${PV}"
 
 src_configure(){
 	mycmakeargs=(

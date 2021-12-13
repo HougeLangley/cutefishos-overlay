@@ -12,8 +12,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=terminal-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/terminal/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	EGIT_COMMIT="5d061c545fc17c356b6b114364173c0c25ecde43"
+	SRC_URI="https://github.com/cutefishos/terminal/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/terminal-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="A terminal emulator for Cutefish"
@@ -33,8 +35,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/terminal-${PV}"
 
 src_configure(){
 	mycmakeargs=(

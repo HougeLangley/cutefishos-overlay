@@ -11,9 +11,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=${PN}-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/fishui/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-		https://github.com/HougeLangley/cutefishos-overlay/releases/download/v0.5-patches/fixed_QApplication.patch"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="1d37a00d0aba69076f179c6dcdfd2f17e55b9516"
+	SRC_URI="https://github.com/cutefishos/fishui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="GUI library based on QQC2 for Cutefish applications"
@@ -34,16 +35,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/${PN}-${PV}"
-
-src_prepare(){
-	if [[ ${PV} != 9999* ]]; then
-	eapply "${DISTDIR}/fixed_QApplication.patch"
-	fi
-
-	cmake_src_prepare
-}
 
 src_configure(){
 	mycmakeargs=(

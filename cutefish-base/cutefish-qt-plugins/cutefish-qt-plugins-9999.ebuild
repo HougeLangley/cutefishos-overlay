@@ -11,8 +11,10 @@ if [[ ${PV} = 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=qt-plugins-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/qt-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="b60cdd4c0cf185f538c9746ef321582cbab9568c"
+	SRC_URI="https://github.com/cutefishos/qt-plugins/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/qt-plugins-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="Unify Qt application style of CutefishOS"
@@ -35,8 +37,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/qt-plugins-${PV}"
 
 src_configure(){
 	mycmakeargs=(

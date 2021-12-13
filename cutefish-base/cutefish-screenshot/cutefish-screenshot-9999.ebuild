@@ -12,8 +12,10 @@ if [[ ${PV} = 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=screenshot-${PV}
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/cutefishos/screenshot/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-cygwin ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	EGIT_COMMIT="1ab2dd3e6e94a7ec722afd02bc63beae9cb28b97"
+	SRC_URI="https://github.com/cutefishos/screenshot/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
+	S="${WORKDIR}/screenshot-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="Screenshot tool for CutefishOS"
@@ -30,8 +32,6 @@ BDEPEND="${DEPEND}
 	dev-qt/designer
 	dev-qt/qdbusviewer
 "
-
-S="${WORKDIR}/screenshot-${PV}"
 
 src_configure(){
 	mycmakeargs=(
