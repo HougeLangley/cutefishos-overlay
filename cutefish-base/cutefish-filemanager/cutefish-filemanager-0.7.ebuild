@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=cutefish-filemanager-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="94ecc5661736bf50440c150e06cb3266ddb10f48"
+	EGIT_COMMIT="9c5b3bc3cd8ccd57c3669adb81259ca85c99a901"
 	SRC_URI="https://github.com/cutefishos/filemanager/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/filemanager-${EGIT_COMMIT}"
@@ -23,20 +23,20 @@ HOMEPAGE="https://github.com/cutefishos/filemanager"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 	sys-libs/libcutefish
+"
+DEPEND="
+	dev-qt/qtcore[icu]
+	dev-qt/qtdbus
+	dev-qt/qtdeclarative
+	dev-qt/linguist-tools
 	kde-frameworks/kio
 	kde-frameworks/solid
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

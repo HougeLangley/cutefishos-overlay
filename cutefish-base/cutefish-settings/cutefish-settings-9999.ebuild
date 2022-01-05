@@ -23,24 +23,27 @@ HOMEPAGE="https://github.com/cutefishos/settings"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 	sys-libs/libcutefish
-	media-libs/fontconfig
-	media-libs/freetype
+"
+DEPEND="
+	dev-qt/qtcore[egl]
+	dev-qt/qtgui
+	dev-qt/qtquickcontrols2
+	dev-qt/qtx11extras
+	dev-qt/qtdbus
+	dev-qt/qtxml
+	dev-qt/qtconcurrent
+	dev-qt/linguist-tools
 	dev-libs/icu
-	kde-frameworks/kcoreaddons
-	kde-frameworks/modemmanager-qt
+	x11-libs/libXi
+	x11-libs/libXcursor
 	kde-frameworks/networkmanager-qt
+	kde-frameworks/modemmanager-qt
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

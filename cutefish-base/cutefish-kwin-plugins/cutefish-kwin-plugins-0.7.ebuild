@@ -24,6 +24,9 @@ SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND="
+	dev-qt/qtcore[egl]
+	dev-qt/qtgui
+
 	kde-frameworks/kconfig
 	kde-plasma/kdecoration
 	kde-frameworks/kguiaddons

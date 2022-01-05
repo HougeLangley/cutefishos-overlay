@@ -23,19 +23,15 @@ HOMEPAGE="https://github.com/cutefishos/texteditor"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 "
-BDEPEND="${DEPEND}
-	dev-util/cmake
-	dev-qt/qtcore
-	dev-qt/qtgui
-	dev-qt/qtnetwork
+DEPEND="
+	dev-qt/qtcore[egl]
 	dev-qt/qtdeclarative
-	kde-plasma/kdeplasma-addons
 	kde-frameworks/syntax-highlighting
 "
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(

@@ -24,18 +24,14 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 RDEPEND=""
-DEPEND="dev-qt/qtquickcontrols2[widgets]
+DEPEND="
+	dev-qt/qtcore
 	dev-qt/qtdeclarative
+	dev-qt/qtdbus
+	dev-qt/linguist-tools
 	media-video/mpv[libmpv]
-	net-misc/youtube-dl
 "
-BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
-"
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(

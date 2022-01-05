@@ -11,7 +11,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=${PN}-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="5e1c2eff2fcd8b54cf5dc8eec6710cb45e50beea"
+	EGIT_COMMIT="7a1f2fa580de0e4fab554793c7915a8258cd0f40"
 	SRC_URI="https://github.com/cutefishos/libcutefish/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
@@ -24,20 +24,23 @@ SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND="
-	kde-plasma/kscreen
-	kde-frameworks/modemmanager-qt
-	kde-frameworks/networkmanager-qt
-	dev-qt/qtquickcontrols2[widgets]
-	sys-apps/accountsservice
+	dev-qt/qtcore[egl]
+	dev-qt/qtgui[icu]
+	dev-qt/qtdeclarative
+	dev-qt/qtquickcontrols2
+	dev-qt/qtdbus
+	dev-qt/qtxml
+	dev-qt/qtconcurrent
 	kde-frameworks/bluez-qt
+	kde-frameworks/networkmanager-qt
+	kde-frameworks/modemmanager-qt
+	kde-plasma/libkscreen
+	kde-frameworks/kio
+	dev-qt/qtsensors
+	media-libs/libcanberra[pulseaudio]
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

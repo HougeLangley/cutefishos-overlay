@@ -24,18 +24,17 @@ SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND="
-	kde-frameworks/kwindowsystem
-	dev-libs/libdbusmenu-qt
+	dev-qt/qtcore[egl]
+	dev-qt/qtwidgets
+	dev-qt/qtquickcontrols2
+	dev-qt/qtdbus
+	dev-qt/qtx11extras
 	dev-libs/libqtxdg
-	dev-qt/qtquickcontrols2[widgets]
+	dev-libs/libdbusmenu-qt
+	kde-frameworks/kwindowsystem
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

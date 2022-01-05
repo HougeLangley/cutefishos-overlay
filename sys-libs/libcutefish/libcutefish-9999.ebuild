@@ -24,20 +24,23 @@ SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND="
-	kde-plasma/kscreen
-	kde-frameworks/modemmanager-qt
-	kde-frameworks/networkmanager-qt
-	dev-qt/qtquickcontrols2[widgets]
-	sys-apps/accountsservice
+	dev-qt/qtcore[egl]
+	dev-qt/qtgui[icu]
+	dev-qt/qtdeclarative
+	dev-qt/qtquickcontrols2
+	dev-qt/qtdbus
+	dev-qt/qtxml
+	dev-qt/qtconcurrent
 	kde-frameworks/bluez-qt
+	kde-frameworks/networkmanager-qt
+	kde-frameworks/modemmanager-qt
+	kde-plasma/libkscreen
+	kde-frameworks/kio
+	dev-qt/qtsensors
+	media-libs/libcanberra[pulseaudio]
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

@@ -23,20 +23,20 @@ HOMEPAGE="https://github.com/cutefishos/filemanager"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 	sys-libs/libcutefish
+"
+DEPEND="
+	dev-qt/qtcore[icu]
+	dev-qt/qtdbus
+	dev-qt/qtdeclarative
+	dev-qt/linguist-tools
 	kde-frameworks/kio
 	kde-frameworks/solid
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

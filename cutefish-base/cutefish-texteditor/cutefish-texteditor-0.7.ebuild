@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=cutefish-texteditor-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="7967442827911ed8faf2a8faa6fea3fdc1907381"
+	EGIT_COMMIT="1f208792b7e8a863bf6ea624340288856976f180"
 	SRC_URI="https://github.com/cutefishos/texteditor/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/texteditor-${EGIT_COMMIT}"
@@ -23,19 +23,15 @@ HOMEPAGE="https://github.com/cutefishos/texteditor"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 "
-BDEPEND="${DEPEND}
-	dev-util/cmake
-	dev-qt/qtcore
-	dev-qt/qtgui
-	dev-qt/qtnetwork
+DEPEND="
+	dev-qt/qtcore[egl]
 	dev-qt/qtdeclarative
-	kde-plasma/kdeplasma-addons
 	kde-frameworks/syntax-highlighting
 "
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(

@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=cutefish-terminal-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="5d061c545fc17c356b6b114364173c0c25ecde43"
+	EGIT_COMMIT="3cd399fcd22525647f8cf2d610ebf2bf7082b74f"
 	SRC_URI="https://github.com/cutefishos/terminal/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
 	S="${WORKDIR}/terminal-${EGIT_COMMIT}"
@@ -23,18 +23,17 @@ HOMEPAGE="https://github.com/cutefishos/terminal"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
-	dev-qt/qtsvg
 "
-BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
+DEPEND="
+	dev-qt/qtcore[egl]
+	dev-qt/qtgui
+	dev-qt/qtquickcontrols2
+	dev-qt/qtdbus
+	dev-qt/linguist-tools
 "
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(

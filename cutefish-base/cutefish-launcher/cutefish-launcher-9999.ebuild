@@ -23,19 +23,21 @@ HOMEPAGE="https://github.com/cutefishos/launcher"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 	sys-libs/libcutefish
+"
+DEPEND="
+	dev-qt/qtcore[egl]
+	dev-qt/qtwidgets
+	dev-qt/qtdbus
+	dev-qt/qtquickcontrols2
+	dev-qt/linguist-tools
+	dev-qt/qtconcurrent
 	kde-frameworks/kwindowsystem
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

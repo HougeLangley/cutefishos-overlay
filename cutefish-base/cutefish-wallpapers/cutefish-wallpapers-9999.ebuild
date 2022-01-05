@@ -24,10 +24,7 @@ SLOT="0"
 IUSE=""
 RDEPEND=""
 DEPEND=""
-BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
-	dev-util/ninja
-"
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(

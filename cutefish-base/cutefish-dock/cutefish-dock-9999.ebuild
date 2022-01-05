@@ -23,19 +23,22 @@ HOMEPAGE="https://github.com/cutefishos/dock"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/fishui
 	sys-libs/libcutefish
-	dev-qt/qtsvg
+"
+DEPEND="
+	dev-qt/qtcore
+	dev-qt/qtwidgets
+	dev-qt/qtdbus
+	dev-qt/qtx11extras
+	dev-qt/qtconcurrent
+	dev-qt/linguist-tools
+	dev-qt/qtquickcontrols2
+	kde-frameworks/kwindowsystem
 "
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
 "
 
 src_configure(){

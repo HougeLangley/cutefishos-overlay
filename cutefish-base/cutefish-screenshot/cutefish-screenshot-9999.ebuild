@@ -24,14 +24,15 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 RDEPEND=""
-DEPEND=""
-BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
-	dev-qt/linguist-tools[qml]
-	dev-qt/assistant
-	dev-qt/designer
-	dev-qt/qdbusviewer
+DEPEND="
+	dev-qt/qtcore
+	dev-qt/qtdbus
+	dev-qt/qtgui
+	dev-qt/qtwidgets
+	dev-qt/qtdeclarative
+	dev-qt/linguist-tools
 "
+BDEPEND="${DEPEND}"
 
 src_configure(){
 	mycmakeargs=(

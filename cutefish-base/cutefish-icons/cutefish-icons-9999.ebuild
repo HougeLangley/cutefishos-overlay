@@ -25,7 +25,6 @@ IUSE=""
 RDEPEND=""
 DEPEND=""
 BDEPEND="${DEPEND}
-	kde-frameworks/extra-cmake-modules
 	dev-util/ninja
 "
 
