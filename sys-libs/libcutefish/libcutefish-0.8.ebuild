@@ -39,7 +39,9 @@ DEPEND="
 	dev-qt/qtsensors
 	media-libs/libcanberra[pulseaudio]
 "
-BDEPEND="${DEPEND}"
+BDEPEND="${DEPEND}
+	dev-util/ninja
+"
 
 src_configure(){
 	mycmakeargs=(
