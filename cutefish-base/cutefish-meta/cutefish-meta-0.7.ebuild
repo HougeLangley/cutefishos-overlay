@@ -10,7 +10,7 @@ SRC_URI=""
 LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
-IUSE="+base +terminal +extra"
+IUSE="+base +terminal +extra +themes +sddm"
 
 RDEPEND="
 		>=sys-libs/cutefish-core-${PV}:${SLOT}
@@ -28,6 +28,9 @@ RDEPEND="
 		>=cutefish-base/cutefish-screenshot-${PV}:${SLOT}
 		>=cutefish-base/cutefish-videoplayer-${PV}:${SLOT}
 		x11-misc/sddm
+		x11-misc/xdg-user-dirs
 		terminal?	(	>=cutefish-base/cutefish-terminal-${PV}:${SLOT}	)
 		extra?	(	>=cutefish-base/cutefish-texteditor-${PV}:${SLOT}	)
+		themes?	(	>=cutefish-base/cutefish-gtk-themes-${PV}:${SLOT}	)
+		sddm?	(	>=cutefish-base/cutefish-sddm-theme-${PV}:${SLOT}	)
 "
