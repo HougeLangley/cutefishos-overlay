@@ -10,7 +10,7 @@ SRC_URI=""
 LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
-IUSE="+base +terminal +extra +themes +sddm"
+IUSE="+base +terminal +extra +themes +sddm +cjk"
 
 RDEPEND="
 		>=sys-libs/cutefish-core-${PV}:${SLOT}
@@ -33,4 +33,5 @@ RDEPEND="
 		extra?	(	>=cutefish-base/cutefish-texteditor-${PV}:${SLOT}	)
 		themes?	(	>=cutefish-base/cutefish-gtk-themes-${PV}:${SLOT}	)
 		sddm?	(	>=cutefish-base/cutefish-sddm-theme-${PV}:${SLOT}	)
+		cjk?	(	media-fonts/noto[cjk]	)
 "
