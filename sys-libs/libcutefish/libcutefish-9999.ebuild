@@ -11,10 +11,9 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=${PN}-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="5e1c2eff2fcd8b54cf5dc8eec6710cb45e50beea"
-	SRC_URI="https://github.com/cutefishos/libcutefish/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/cutefishos/libcutefish/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
-	S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
+	S="${WORKDIR}/${PN}-${PV}"
 fi
 
 DESCRIPTION="System library for Cutefish applications"

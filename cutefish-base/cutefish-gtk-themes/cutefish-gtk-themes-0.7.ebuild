@@ -12,10 +12,9 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=cutefish-gtk-themes-${PV}
 	KEYWORDS=""
 else
-	EGIT_COMMIT="91f762fc2b069c4754d7e5741e07613bfea049a4"
-	SRC_URI="https://github.com/cutefishos/gtk-themes/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/cutefishos/gtk-themes/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv"
-	S="${WORKDIR}/gtk-themes-${EGIT_COMMIT}"
+	S="${WORKDIR}/gtk-themes-${PV}"
 fi
 
 DESCRIPTION="CutefishOS GTK Themes"
