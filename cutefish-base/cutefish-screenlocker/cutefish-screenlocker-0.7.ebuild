@@ -14,7 +14,7 @@ if [[ ${PV} = 9999* ]] ; then
 else
 	EGIT_COMMIT="55fb5253deeeb5bcab54daed3ce75f64396debb8"
 	SRC_URI="https://github.com/cutefishos/screenlocker/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/screenlocker-${EGIT_COMMIT}"
 fi
 

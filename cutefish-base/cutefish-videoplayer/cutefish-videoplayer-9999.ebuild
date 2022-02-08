@@ -14,7 +14,7 @@ if [[ ${PV} == 9999* ]] ; then
 else
 	EGIT_COMMIT="c1218016e4de425cae23c1ea715e57b68a5b24c2"
 	SRC_URI="https://github.com/cutefishos/videoplayer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/videoplayer-${EGIT_COMMIT}"
 fi
 

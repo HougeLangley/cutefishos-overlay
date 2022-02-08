@@ -12,7 +12,7 @@ if [[ ${PV} == 9999* ]] ; then
 	KEYWORDS=""
 else
 	SRC_URI="https://github.com/cutefishos/kwin-plugins/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/kwin-plugins-${PV}"
 fi
 

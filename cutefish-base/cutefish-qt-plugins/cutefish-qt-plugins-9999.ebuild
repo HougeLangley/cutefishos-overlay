@@ -13,7 +13,7 @@ if [[ ${PV} = 9999* ]] ; then
 else
 	EGIT_COMMIT="b60cdd4c0cf185f538c9746ef321582cbab9568c"
 	SRC_URI="https://github.com/cutefishos/qt-plugins/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/qt-plugins-${EGIT_COMMIT}"
 fi
 

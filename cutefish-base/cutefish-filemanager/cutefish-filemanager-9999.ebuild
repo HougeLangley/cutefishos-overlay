@@ -13,7 +13,7 @@ if [[ ${PV} == 9999* ]] ; then
 	KEYWORDS=""
 else
 	SRC_URI="https://github.com/cutefishos/filemanager/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/filemanager-${PV}"
 fi
 

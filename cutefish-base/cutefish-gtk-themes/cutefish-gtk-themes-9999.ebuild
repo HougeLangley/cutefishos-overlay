@@ -14,7 +14,7 @@ if [[ ${PV} == 9999* ]] ; then
 else
 	EGIT_COMMIT="91f762fc2b069c4754d7e5741e07613bfea049a4"
 	SRC_URI="https://github.com/cutefishos/gtk-themes/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/gtk-themes-${EGIT_COMMIT}"
 fi
 

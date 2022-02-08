@@ -13,7 +13,7 @@ if [[ ${PV} == 9999* ]] ; then
 else
 	EGIT_COMMIT="c332dbac831ba3050513bd340ec25ab84f781750"
 	SRC_URI="https://github.com/cutefishos/appmotor/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/appmotor-${EGIT_COMMIT}"
 fi
 

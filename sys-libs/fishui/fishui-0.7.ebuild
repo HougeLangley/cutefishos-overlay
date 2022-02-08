@@ -13,7 +13,7 @@ if [[ ${PV} == 9999* ]] ; then
 else
 	EGIT_COMMIT="11697565e149c37f67c4707f07a996528cb10e3f"
 	SRC_URI="https://github.com/cutefishos/fishui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 fi
 

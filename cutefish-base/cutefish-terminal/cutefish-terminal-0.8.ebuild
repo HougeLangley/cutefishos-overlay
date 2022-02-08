@@ -14,7 +14,7 @@ if [[ ${PV} == 9999* ]] ; then
 else
 	EGIT_COMMIT="012ac1282abaa09713c04147831a4bd197d43364"
 	SRC_URI="https://github.com/cutefishos/terminal/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
 	S="${WORKDIR}/terminal-${EGIT_COMMIT}"
 fi
 
