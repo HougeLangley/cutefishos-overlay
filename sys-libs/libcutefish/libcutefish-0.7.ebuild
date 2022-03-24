@@ -14,7 +14,7 @@ else
 	EGIT_COMMIT="6bf2df8e91bcc21b116fec7df35d30d415122b39"
 	SRC_URI="https://github.com/cutefishos/libcutefish/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64 ~riscv ~loong"
-	S="${WORKDIR}/${PN}-${PV}"
+	S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 fi
 
 DESCRIPTION="System library for Cutefish applications"
